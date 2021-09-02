@@ -1,5 +1,3 @@
-console.clear();
-
 class RenderFactory {
   
   rendering() {
@@ -37,7 +35,7 @@ class RenderFactory {
 
   }
   
-  renderOption2(code, className) {
+  renderOption2(code, findClassName, modifyClassName) {
 
     let sections = document.getElementsByClassName(code);
 
@@ -45,15 +43,12 @@ class RenderFactory {
 
       let section = sections.item(i);
 
-      let grids = section.getElementsByClassName('grid');
+      let classes = section.getElementsByClassName(findClassName);
 
-      for ( let j = 0; j < grids.length; j++ ) {
+      for ( let j = 0; j < classes.length; j++ ) {
 
-        let tag = grids.item(j);
-        
-        console.log(tag);
-        
-        tag.classList.add(className);
+        let findClass = classes.item(j);
+        findClass.classList.add(modifyClassName);
 
       }
 
@@ -73,14 +68,18 @@ class RenderFactory {
         $('.S2').wrapInner('<div class="content-center"></div>');
         break;
       case 'S3' :
-        this.renderOption1(code, 'div', 'column');
         
-        //this.renderOption2('S3','column');
+        this.renderOption1(code,'div','column');
+        //this.renderOption2(code, 'wrap', 'column');
+        //$('.S3').children('.column').wrapAll('<div class="grid sm"></div>');
+
+        $('.S3').each(function(index, node) {
+          const $node = $(node);
+          $node.children('.column').wrapAll('<div class="grid sm"></div>');
+
+
+        });
         
-        $('.S3').children('.column').wrapAll('<div class="grid sm"></div>');
-        //$('.S3').append('<div class="gird sm"></div>');
-        //$('.sm').children('div').attr('class','column');
-        //this.renderOption(code, 'div', 'column');
         break;
       case 'S4' :
         $('.S4').append('<div class="gird ms"></div>');
