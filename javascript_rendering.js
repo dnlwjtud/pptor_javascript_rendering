@@ -1,12 +1,12 @@
 class RenderFactory {
-  
+
   rendering() {
-    
+
     for ( let i = 0; i < 7; i++) {
       let code = 'S' + i;
       this.renderingByCode(code);
     }
-    
+
     this.wrapping();
   }
 
@@ -34,7 +34,7 @@ class RenderFactory {
     }
 
   }
-  
+
   renderOption2(code, findClassName, modifyClassName) {
 
     let sections = document.getElementsByClassName(code);
@@ -55,9 +55,9 @@ class RenderFactory {
     }
 
   }
-    
+
   renderingByCode( code ) {
-    
+
     switch ( code ) {
       case 'S1' :
         this.renderOption1(code, 'h1', 'text-landing');
@@ -68,10 +68,8 @@ class RenderFactory {
         $('.S2').wrapInner('<div class="content-center"></div>');
         break;
       case 'S3' :
-        
+
         this.renderOption1(code,'div','column');
-        //this.renderOption2(code, 'wrap', 'column');
-        //$('.S3').children('.column').wrapAll('<div class="grid sm"></div>');
 
         $('.S3').each(function(index, node) {
           const $node = $(node);
@@ -79,11 +77,17 @@ class RenderFactory {
 
 
         });
-        
+
         break;
       case 'S4' :
-        $('.S4').append('<div class="gird ms"></div>');
-        //this.renderOption(code, 'div', 'column');
+
+        this.renderOption1(code,'div','column');
+
+        $('.S4').each(function(index, node) {
+          const $node = $(node);
+          $node.children('.column').wrapAll('<div class="grid ms"></div>');
+        });
+
         break;
       case 'S5' :
         this.renderOption1(code, 'img', 'alignleft');
@@ -94,14 +98,10 @@ class RenderFactory {
         this.renderOption1(code, 'img', 'size-50');
         break;
     }
-    
+
   }
-  
+
 }
-
-const renderer = new RenderFactory();
-renderer.rendering();
-
 
 
 
