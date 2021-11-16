@@ -91,28 +91,28 @@
                   break;
               case "왼쪽 그림":
                   editor.replaceSelection(
-                      "@S5\r\n![image](url을 여기에 붙혀넣어주세요) \r\n # 제목을 입력하여 주시기 바랍니다.\r\n - 내용을 입력하여 주시기 바랍니다.",
+                      "@S5\r\n![image](url을 여기에 붙혀넣어주세요) \r\n # 제목을 입력하여 주시기 바랍니다.\r\n - 내용을 입력하여 주시기 바랍니다.\r\n",
                       [start[0], start[1] - 1],
                       end
                   );
                   break;
               case "오른쪽 그림":
                   editor.replaceSelection(
-                      "@S6\r\n![image](url을 여기에 넣어주세요) \r\n # 제목을 입력하여 주시기 바랍니다.\r\n - 내용을 입력하여 주시기 바랍니다.",
+                      "@S6\r\n![image](url을 여기에 넣어주세요) \r\n # 제목을 입력하여 주시기 바랍니다.\r\n - 내용을 입력하여 주시기 바랍니다.\r\n",
                       [start[0], start[1] - 1],
                       end
                   );
                   break;
               case "지도가 있는 내용":
                 editor.replaceSelection(
-                    "@S7\r\n!map(url을 여기에 넣어주세요) \r\n % \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다.",
+                    "@S7\r\n!map(url을 여기에 넣어주세요) \r\n % \r\n ## 제목을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n",
                     [start[0], start[1] - 1],
                     end
                 );
                   break;
               case "동영상이 있는 내용":
                 editor.replaceSelection(
-                  "@S8\r\n!youtube(url을 여기에 넣어주세요) \r\n % \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다.",
+                  "@S8\r\n!youtube(url을 여기에 넣어주세요) \r\n % \r\n ## 제목을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다.\r\n",
                     [start[0], start[1] - 1],
                     end
                 );
