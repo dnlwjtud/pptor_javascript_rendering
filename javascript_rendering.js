@@ -2,7 +2,7 @@ class RenderFactory {
 
   rendering() {
 
-    for ( let i = 0; i < 7; i++) {
+    for ( let i = 0; i < 10; i++) {
       let code = 'S' + i;
       this.renderingByCode(code);
     }
@@ -97,6 +97,26 @@ class RenderFactory {
         this.renderOption1(code, 'img', 'alignright');
         this.renderOption1(code, 'img', 'size-50');
         break;
+        case 'S7' :
+          this.renderOption1(code, 'div', 'flex-content');
+          $('.S7').wrapInner('<div class="card-50 bg-white"></div>');
+  
+          this.renderOption1(code, 'ul', 'description');
+          break;
+        case 'S8' :
+          this.renderOption1(code, 'div', 'flex-content');
+          $('.S8').wrapInner('<div class="card-50 bg-white"></div>');
+  
+          this.renderOption1(code, 'ul', 'description');
+          break;
+        case 'S9' :
+          $('.S9').addClass('aligncenter');
+          $('.S9').addClass('bg-black');
+          //this.renderOption1(code,'section', 'aligncenter');
+          //this.renderOption1(code,'section', 'bg-black');
+          this.renderOption1(code,'span', 'background');
+          this.renderOption1(code,'span', 'anim');
+          break;
     }
 
   }

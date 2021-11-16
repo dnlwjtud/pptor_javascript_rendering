@@ -39,6 +39,12 @@
           li5.innerHTML = "<img src='https://i.imgur.com/j0hc9Er.png'><p>왼쪽 그림</p>";
           let li6 = document.createElement("li");
           li6.innerHTML = "<img src='https://i.imgur.com/JwCBy21.png'><p>오른쪽 그림</p>";
+          let li7 = document.createElement("li");
+          li7.innerHTML = "<img src=''><p>지도가 있는 내용</p>";
+          let li8 = document.createElement("li");
+          li8.innerHTML = "<img src=''><p>동영상이 있는 내용</p>";
+          let li9 = document.createElement("li");
+          li9.innerHTML = "<img src=''><p>움직이는 배경 그림</p>";
   
           popup.append(li1);
           popup.append(li2);
@@ -46,6 +52,9 @@
           popup.append(li4);
           popup.append(li5);
           popup.append(li6);
+          popup.append(li7);
+          popup.append(li8);
+          popup.append(li9);
   
           popup.addEventListener("mousedown", (ev) => {
             const text = ev.target.textContent;
@@ -89,10 +98,31 @@
                   break;
               case "오른쪽 그림":
                   editor.replaceSelection(
-                      "@S6\r\n![image](url을 여기에 붙혀넣어주세요) \r\n # 제목을 입력하여 주시기 바랍니다.\r\n - 내용을 입력하여 주시기 바랍니다.",
+                      "@S6\r\n![image](url을 여기에 넣어주세요) \r\n # 제목을 입력하여 주시기 바랍니다.\r\n - 내용을 입력하여 주시기 바랍니다.",
                       [start[0], start[1] - 1],
                       end
                   );
+                  break;
+              case "지도가 있는 내용":
+                editor.replaceSelection(
+                    "@S7\r\n!map(url을 여기에 넣어주세요) \r\n % \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다.",
+                    [start[0], start[1] - 1],
+                    end
+                );
+                  break;
+              case "동영상이 있는 내용":
+                editor.replaceSelection(
+                  "@S8\r\n!youtube(url을 여기에 넣어주세요) \r\n % \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다. \r\n - 내용을 입력하여 주시기 바랍니다.",
+                    [start[0], start[1] - 1],
+                    end
+                );
+                  break;
+              case "움직이는 배경 그림":
+                editor.replaceSelection(
+                    "@S9\r\n![image](url을 여기에 넣어주세요) \r\n ## 표제를 입력하여 주시기 바랍니다.\r\n 내용을 입력하여 주시기 바랍니다.",
+                    [start[0], start[1] - 1],
+                    end
+                );
                   break;
               default:
                   break;
